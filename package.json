@@ -9,6 +9,7 @@
   "author": "mikhama",
   "license": "MIT",
   "devDependencies": {
-    "json-server": "^0.16.3"
+    "json-server": "^0.16.3",
+    "typescript": "^4.9.4"
   }
 }
