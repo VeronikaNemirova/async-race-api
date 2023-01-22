@@ -1,23 +1,26 @@
 {
-  "name": "async-race-api",
+  "name": "SPA",
   "version": "1.0.0",
-  "description": "Fun with promises",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack serve"
   },
-  "author": "mikhama",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "json-server": "^0.16.3",
-    "typescript": "^4.9.4"
+    "typescript": "^4.2.4",
+    "webpack-cli": "^4.7.0"
   },
   "dependencies": {
-    "css-loader": "^6.7.3",
-    "html-webpack-plugin": "^5.5.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.4.2",
-    "webpack": "^5.75.0",
-    "webpack-dev-server": "^4.11.1"
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.2.2",
+    "webpack": "^5.37.1",
+    "webpack-dev-server": "^3.11.2"
   }
 }
