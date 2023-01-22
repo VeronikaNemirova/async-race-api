@@ -3,6 +3,7 @@ import store from '../../services/store';
 import { renderCar } from '../car';
 import DrivingService from '../../shared/driving';
 import ApiService from '../../services/api';
+import './style.css';
 
 class Garage {
   private drivingService: DrivingService;

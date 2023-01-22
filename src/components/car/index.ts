@@ -1,8 +1,10 @@
+import './style.css';
+
 export const renderCarImg = (color: string): string => `
- <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-   width="100" height="50" viewBox="0 0 1280.000000 640.000000"
+ <svg class="car-img" version="1.0" xmlns="http://www.w3.org/2000/svg"
+   width="150" height="100" viewBox="0 0 1280.000000 640.000000"
    preserveAspectRatio="xMidYMid meet">
-    <g transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)"
+    <g transform="translate(0.000000,840.000000) scale(0.100000,-0.100000)"
       fill="${color}" stroke="none">
       <path d="M4235 5299 c-410 -26 -906 -96 -1140 -160 -136 -37 -293 -92 -495
       -174 -234 -95 -347 -148 -1048 -483 l-272 -131 -438 -56 c-240 -31 -454 -61
@@ -75,9 +77,10 @@ export const renderCar = ({
       <div class="car" id="car-${id}">
         ${renderCarImg(color)}
       </div>
+      <div class="track"></div>
     </div>
     <div class="finish" id="finish-${id}">
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+    <svg class="flag" version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="64.000000pt" height="61.000000pt" viewBox="0 0 1280.000000 1228.000000"
     preserveAspectRatio="xMidYMid meet">
    <g transform="translate(0.000000,1228.000000) scale(0.100000,-0.100000)"

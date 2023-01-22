@@ -1,5 +1,12 @@
+* {
+    font-family: Caveat;
+}
+body {
+    background-color: antiquewhite;
+}
 .header-container div {
     display: flex;
     justify-content: space-evenly;
 }
+
 

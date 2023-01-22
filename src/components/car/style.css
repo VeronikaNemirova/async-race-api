@@ -1,0 +1,16 @@
+.finish {
+    
+    display: flex;
+    position: relative;
+    transform: translateY(58px) translateX(640px);
+}
+.flag {
+    position: relative;
+    left: 260px;
+    top: -140px;
+}
+.track {
+    border-bottom: dashed;
+    margin-top: 50px;
+    
+}
