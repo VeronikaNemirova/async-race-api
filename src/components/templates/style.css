@@ -1,0 +1,46 @@
+.header-garage-btn{
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #21b9f5 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
+.header-garage-btn:hover {
+    background-position: right center;
+}
+.header-winners-btn{
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #21b9f5 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+.header-winners-btn:hover {
+    background-position: right center;
+}
+button a {
+    text-decoration: none;
+}
+.title {
+    font-size: 40px;
+    margin: 0;
+}

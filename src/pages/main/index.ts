@@ -1,5 +1,6 @@
 import { renderGarage } from '../../components/garage';
 import Page from '../../components/templates/page';
+import './style.css';
 
 class MainPage extends Page {
 
@@ -22,9 +23,9 @@ class MainPage extends Page {
             id="create-color"
             name="color"
             type="color"
-            value="#ffffff"
+            value="#1100ff"
           />
-          <button class="btn" type="submit">Create</button>
+          <button class="btn" id="create-btn" type="submit">Create</button>
         </form>
         <form class="form update-form" id="update-form">
           <input

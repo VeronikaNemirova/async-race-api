@@ -1,3 +1,5 @@
+import './style.css';
+
 abstract class Page {
     protected container: HTMLElement;
     static TextObject = {};
