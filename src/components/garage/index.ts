@@ -11,20 +11,21 @@ class Garage {
   constructor() {
     this.drivingService = new DrivingService();
     this.apiService = new ApiService();
-    refs.root.addEventListener('click', async (event: MouseEvent) => {
-      const target = <HTMLElement>event.target;
-
-      if (target.classList.contains('start-engine-btn')) {
-        const id = Number(target.id.split('start-engine-car-')[1]);
-        this.drivingService.startDriving(id);
-      }
-
-      if (target.classList.contains('stop-engine-btn')) {
-        const id = Number(target.id.split('stop-engine-car-')[1]);
-        this.drivingService.stopDriving(id);
-      }
-    });
+    refs.root.addEventListener('click', this.handleButtonClick);
   }
+
+  handleButtonClick = async (event: MouseEvent): Promise<void> => {
+    const target = <HTMLElement>event.target;
+    if (target.classList.contains('start-engine-btn')) {
+      const id = Number(target.id.split('start-engine-car-')[1]);
+      this.drivingService.startDriving(id);
+    }
+
+    if (target.classList.contains('stop-engine-btn')) {
+      const id = Number(target.id.split('stop-engine-car-')[1]);
+      this.drivingService.stopDriving(id);
+    }
+  };
 
   updateGarage = async (): Promise<void> => {
     const { items, count } = await this.apiService.getCars(store.carsPage);
