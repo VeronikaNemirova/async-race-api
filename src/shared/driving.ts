@@ -1,6 +1,6 @@
 import refs from './refs';
 import store from '../services/store';
-import { getDistanceBtwElements, animation } from './utils/animation';
+import { getDistanceBtwElements, animateCar } from './utils/animation';
 import { Engine, DrivingStatus } from './model';
 import ApiService from '../services/api';
 
@@ -26,10 +26,10 @@ class DrivingService {
     const finish = refs.getFinishElem(id);
     const distanceBtwElem = Math.floor(getDistanceBtwElements(car, finish)) + 100;
   
-    store.animation[id] = animation(car, distanceBtwElem, time);
+    store.animateCar[id] = await animateCar(car, distanceBtwElem, time);
   
     const { success } = await this.apiService.getDriveStatus(id);
-    if (!success) window.cancelAnimationFrame(store.animation[id].id);
+    if (!success) window.cancelAnimationFrame(store.animateCar[id].id);
   
     return { success, id, time };
   };
@@ -48,7 +48,7 @@ class DrivingService {
   
     const car = refs.getCarElem(id);
     car.style.transform = 'translateX(0) translateY(52px)';
-    if (store.animation[id]) window.cancelAnimationFrame(store.animation[id].id);
+    if (store.animateCar[id]) window.cancelAnimationFrame(store.animateCar[id].id);
   };
   
 }
