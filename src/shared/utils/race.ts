@@ -26,7 +26,7 @@ export const raceAll = async (
 
   return {
     ...winner,
-    time: successfulResult.value.time / 1000, // Keep time as a number, avoid toFixed
+    time: successfulResult.value.time / 1000, 
   };
 };
 
