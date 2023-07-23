@@ -1,3 +1,8 @@
+export interface AnimationState {
+  animationFrameId: number;
+  id: number;
+}
+
 const getElemPosition = (elem: HTMLElement) => {
   const { top, left, width, height } = elem.getBoundingClientRect();
 
@@ -20,32 +25,28 @@ export const getDistanceBtwElements = (
   );
 };
 
-export const animation = (
+export const animateCar = async (
   car: HTMLElement,
   distanceBtwElem: number,
   animationTime: number,
-): { id: number } => {
+): Promise<AnimationState> => {
   const targetCar = car;
-  let start: number | null = null;
-  const state: {
-    id: number;
-  } = { id: 1 };
 
-  const getStep = (timestamp: number) => {
-    if (!start) start = timestamp;
-    const time = timestamp - start;
-    const passed = Math.round(time * (distanceBtwElem / animationTime));
-    targetCar.style.transform = `translateX(${Math.min(
-      passed,
-      distanceBtwElem,
-    )}px) translateY(52px)`;
+  return new Promise<AnimationState>((resolve) => {
+    let animationFrameId: number | null = null;
+    const getStep = (timestamp: number) => {
+      if (!animationFrameId) animationFrameId = timestamp;
+      const time = timestamp - animationFrameId;
+      const passed = Math.round(time * (distanceBtwElem / animationTime));
+      targetCar.style.transform = `translateX(${Math.min(passed, distanceBtwElem)}px) translateY(52px)`;
 
-    if (passed < distanceBtwElem) {
-      state.id = window.requestAnimationFrame(getStep);
-    }
-  };
+      if (passed < distanceBtwElem) {
+        animationFrameId = requestAnimationFrame(getStep);
+      } else {
+        resolve({ animationFrameId, id: 1 }); // Replace "1" with the appropriate ID value
+      }
+    };
 
-  state.id = window.requestAnimationFrame(getStep);
-
-  return state;
+    animationFrameId = requestAnimationFrame(getStep);
+  });
 };

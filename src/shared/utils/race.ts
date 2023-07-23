@@ -5,28 +5,28 @@ export const raceAll = async (
   promises: Array<Promise<DrivingStatus>>,
   ids: number[],
 ): Promise<Race> => {
-  const { success, id, time } = await Promise.race(promises);
+  const results = await Promise.allSettled(promises);
+  const successfulResult = results.find(
+    (result): result is PromiseFulfilledResult<DrivingStatus> =>
+      result.status === 'fulfilled'
+  );
 
-  if (!success) {
-    const failedIndex = ids.findIndex(i => i === id);
-    const restPromises = [
-      ...promises.slice(0, failedIndex),
-      ...promises.slice(failedIndex + 1, promises.length),
-    ];
-    const restIds = [
-      ...ids.slice(0, failedIndex),
-      ...ids.slice(failedIndex + 1, ids.length),
-    ];
+  if (!successfulResult) {
+    const failedIndex = results.findIndex(
+      (result) => result.status === 'rejected'
+    );
+    const restPromises = promises.filter((_, index) => index !== failedIndex);
+    const restIds = ids.filter((_, index) => index !== failedIndex);
     return raceAll(restPromises, restIds);
   }
 
-  const winner: Car = store.cars.filter(
-    (car: Car): boolean => car.id === id,
-  )[0];
+  const winner: Car = store.cars.find(
+    (car: Car) => car.id === successfulResult.value.id
+  ) || store.cars[0];
 
   return {
     ...winner,
-    time: Number((time / 1000).toFixed(2)),
+    time: successfulResult.value.time / 1000, // Keep time as a number, avoid toFixed
   };
 };
 
@@ -34,13 +34,9 @@ export const race = async (action: {
   (id: number): Promise<DrivingStatus>;
 }): Promise<Race> => {
   const promises = store.cars.map(({ id }) => action(id));
-
-  const winner = await raceAll(
-    promises,
-    store.cars.map(
-      (car: { name: string; color: string; id: number }) => car.id,
-    ),
-  );
+  const winner = await raceAll(promises, store.cars.map((car: Car) => car.id));
 
   return winner;
 };
+
+export default race;
