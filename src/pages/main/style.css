@@ -1,0 +1,139 @@
+.controls-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+.item button {
+    outline: none;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border: none;
+    border-radius: 45px;
+    margin: 10px 20px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+    transition: .3s;
+    font-size: 18px;
+}
+.item button:hover {
+    background: #2EE59D;
+    box-shadow: 0px 15px 20px rgb(46 229 157 / 40%);
+    color: #fff;
+    transform: translateY(-7px);
+    cursor: pointer;
+}
+
+.input {
+    border: solid 2px #21b9f5;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.forms-container {
+    margin: 10px;
+    position: relative;
+}
+.color {
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    background-color: #21b9f5;
+    border: 1px solid #2ee5c6;
+}
+#create-btn {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #074c68 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+#create-btn:hover {
+    background-position: right center;
+
+}
+
+#update-btn {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #074c68 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+#update-btn:hover {
+    background-position: right center;
+
+}
+
+.prev-button {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #074c68 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
+.prev-button:hover {
+    background-position: right center;
+}
+
+.next-button {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #074c68 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
+.next-button:hover {
+    background-position: right center;
+}
+
+.win-message {
+    font-size: 64px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: brown;
+    
+}

@@ -7,7 +7,8 @@ Api for Rolling Scopes School task "Async Race".
 - Clone this repo: `$ git clone https://github.com/mikhama/async-race-api.git`.
 - Go to downloaded folder: `$ cd async-race-api`.
 - Install dependencies: `$ npm install`.
-- Start server: `$ npm start`.
+- Start server: `node .\index.js`.
+- Start task: `npm start`.
 - Now you can send requests to the address: `http://127.0.0.1:3000`.
 
 ## Usage

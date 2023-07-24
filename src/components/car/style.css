@@ -1,0 +1,95 @@
+.finish {
+    
+    display: flex;
+    position: relative;
+    transform: translateY(58px) translateX(640px);
+}
+.flag {
+    position: relative;
+    left: 260px;
+    top: -140px;
+}
+.track {
+    border-bottom: dashed;
+    margin-top: 50px;
+    
+}
+.car-model {
+    font-size: 32px;
+}
+.select-btn {
+    outline: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+    margin: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #37f1aa inset, 0 0 0 0 #11db7d;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+}
+.select-btn:hover {
+    box-shadow: 0 0 10px 0 #37f1aa inset, 0 0 10px 4px #11db7d;
+    color: #37f1b9;
+}
+.remove-btn {
+    outline: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 30px;
+    margin: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #37f1aa inset, 0 0 0 0 #11db7d;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+}
+.remove-btn:hover {
+    box-shadow: 0 0 10px 0 #37f1aa inset, 0 0 10px 4px #11db7d;
+    color: #37f1b9; 
+}
+
+.start-engine-btn {
+    outline: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 3px 20px;
+    margin: 10px 60px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #37f1d8 inset, 0 0 0 0 #11db7d;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.start-engine-btn:hover {
+    box-shadow: 0 0 10px 0 #37f1aa inset, 0 0 10px 4px #11db7d;
+    color: #37f1b9; 
+}
+
+.stop-engine-btn {
+    outline: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 3px 20px;
+    margin: 10px 60px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 40px 40px #37f1d8 inset, 0 0 0 0 #11db7d;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.stop-engine-btn:hover {
+    box-shadow: 0 0 10px 0 #37f1aa inset, 0 0 10px 4px #11db7d;
+    color: #37f1b9; 
+}
