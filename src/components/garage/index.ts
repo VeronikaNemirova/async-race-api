@@ -1,6 +1,6 @@
-import refs from '../../shared/refs';
+import refs from '../../shared/model';
 import store from '../../services/store';
-import { renderCar } from '../car';
+import { changeCar } from '../car';
 import DrivingService from '../../shared/driving';
 import ApiService from '../../services/api';
 import './style.css';
@@ -46,6 +46,6 @@ export const renderGarage = (): string => `
 <h2 class="title">Garage (${store.carsCount} cars)</h2>
 <p class="text">Page #${store.carsPage}</p>
 <ul class="cars">
-  ${store.cars.map(car => `<li>${renderCar(car)}</li>`).join('')}
+  ${store.cars.map(car => `<li>${changeCar(car)}</li>`).join('')}
 </ul>
 `;

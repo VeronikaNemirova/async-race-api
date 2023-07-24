@@ -1,6 +1,6 @@
 import './style.css';
 
-export const renderCarImg = (color: string): string => `
+export const changeCarColor = (color: string): string => `
  <svg class="car-img" version="1.0" xmlns="http://www.w3.org/2000/svg"
    width="150" height="100" viewBox="0 0 1280.000000 640.000000"
    preserveAspectRatio="xMidYMid meet">
@@ -48,7 +48,7 @@ export const renderCarImg = (color: string): string => `
   </svg>
 `;
 
-export const renderCar = ({
+export const changeCar = ({
   id,
   name,
   color,
@@ -75,7 +75,7 @@ export const renderCar = ({
 }>Stop</button>
       </div>
       <div class="car" id="car-${id}">
-        ${renderCarImg(color)}
+        ${changeCarColor(color)}
       </div>
       <div class="track"></div>
     </div>

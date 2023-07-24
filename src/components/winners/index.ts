@@ -1,7 +1,7 @@
 import store from '../../services/store';
 import ApiService from '../../services/api';
-import { renderCarImg } from '../car';
-import { SortBy, SortOrder } from '../../shared/enums';
+import { changeCarColor } from '../car';
+import { SortBy, SortOrder } from '../../shared/driving';
 import { WinnerCar, WinnersInfo } from '../../shared/model';
 import DrivingService from '../../shared/driving';
 
@@ -68,7 +68,7 @@ export const renderWinners = (): string => `
       ) => `
         <tr>
           <td>${index + 1}</td>
-          <td>${renderCarImg(winner.car.color)}</td>
+          <td>${changeCarColor(winner.car.color)}</td>
           <td>${winner.car.name}</td>
           <td>${winner.wins}</td>
           <td>${winner.time}</td>

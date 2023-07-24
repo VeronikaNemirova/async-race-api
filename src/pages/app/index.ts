@@ -5,7 +5,7 @@ import { renderPage } from '../../components/templates/page';
 import Garage, { renderGarage } from '../../components/garage';
 import store from '../../services/store';
 import { SortBy, View } from '../../shared/driving';
-import refs from '../../shared/elems';
+import refs from '../../shared/model';
 import { race } from '../../shared/utils/race';
 import { generateRandomCars } from '../../shared/utils/generateCars';
 import { WinnerCar } from '../../shared/model';
