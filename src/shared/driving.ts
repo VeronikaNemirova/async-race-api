@@ -1,9 +1,9 @@
-import refs from './refs';
+import refs from './model';
 import store from '../services/store';
 import { getDistanceBtwElements, animateCar } from './utils/animation';
 import { Engine, DrivingStatus } from './model';
 import ApiService from '../services/api';
-
+import { AnimationState } from './utils/animation';
 class DrivingService {
   private apiService: ApiService;
   constructor() {
@@ -26,7 +26,7 @@ class DrivingService {
     const finish = refs.getFinishElem(id);
     const distanceBtwElem = Math.floor(getDistanceBtwElements(car, finish)) + 100;
   
-    store.animateCar[id] = await animateCar(car, distanceBtwElem, time);
+    store.animateCar[id] = await animateCar(car, distanceBtwElem, time) as AnimationState;
   
     const { success } = await this.apiService.getDriveStatus(id);
     if (!success) window.cancelAnimationFrame(store.animateCar[id].id);
@@ -54,3 +54,18 @@ class DrivingService {
 }
 
 export default DrivingService;
+
+export enum SortBy {
+  Time = 'time',
+  Wins = 'wins',
+}
+
+export enum SortOrder {
+  Asc = 'asc',
+  Desc = 'desc',
+}
+
+export enum View {
+  Garage = 'garage',
+  Winners = 'winners',
+}
