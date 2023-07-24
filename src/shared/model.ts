@@ -14,6 +14,22 @@ export type SimpleCar = {
   color: string;
 };
 
+export type Engine = { velocity: number; distance: number };
+
+export type DrivingStatus = {
+  success: boolean;
+  id: number;
+  time: number;
+};
+
+export type Race = {
+  name: string;
+  color: string;
+  id: number;
+  time: number;
+};
+
+
 export type Winner = {
   id: number;
   time: number;
@@ -32,22 +48,6 @@ export type WinnerCar = {
   wins: number;
 }
 
-export type Engine = { velocity: number; distance: number };
-
-export type DrivingStatus = {
-  success: boolean;
-  id: number;
-  time: number;
-};
-
-export type Race = {
-  name: string;
-  color: string;
-  id: number;
-  time: number;
-};
-
-
 export default {
   root: document.querySelector("#root") as HTMLBodyElement,
 
@@ -64,3 +64,4 @@ export default {
     document.getElementById(`finish-${id}`) as HTMLDivElement,
     
 };
+
